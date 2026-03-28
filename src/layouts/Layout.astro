@@ -1,23 +1,178 @@
+---
+// src/layouts/Layout.astro
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Creative Developer & Digital Artisan" } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="zh-CN" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    
+    <!-- 字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  
+  <body class="bg-slate-950 text-slate-200 font-['Outfit',sans-serif] antialiased overflow-x-hidden selection:bg-pink-500/30 selection:text-pink-200">
+    
+    <!-- 动态极光背景 -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] bg-purple-600/30 rounded-full mix-blend-screen filter blur-[100px] opacity-70 animate-blob"></div>
+      <div class="absolute top-[-20%] right-[-10%] w-[70vw] h-[70vw] bg-cyan-600/30 rounded-full mix-blend-screen filter blur-[100px] opacity-70 animate-blob animation-delay-2000"></div>
+      <div class="absolute bottom-[-30%] left-[20%] w-[70vw] h-[70vw] bg-pink-600/30 rounded-full mix-blend-screen filter blur-[100px] opacity-70 animate-blob animation-delay-4000"></div>
+      <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150"></div>
+    </div>
+
+    <!-- 导航栏 -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-white/10 bg-slate-950/60 backdrop-blur-xl">
+      <div class="max-w-5xl mx-auto px-6 py-5 flex justify-between items-center">
+        
+        <!-- Logo -->
+        <a href="/" class="text-xl font-bold text-white tracking-tight hover:scale-105 transition-transform duration-300">
+          Chris 邓宇亮<span class="text-pink-500">.</span>
+        </a>
+        
+        <!-- 桌面端菜单 (md 及以上显示) -->
+        <nav class="hidden md:flex space-x-8 text-sm font-medium">
+          <a href="#work" class="relative group text-slate-300 hover:text-white transition-colors">
+            作品
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-pink-500 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#playground" class="relative group text-slate-300 hover:text-white transition-colors">
+            实验场
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-500 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#about" class="relative group text-slate-300 hover:text-white transition-colors">
+            关于
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <!-- 新增：游泳生活链接 -->
+          <a href="/swimming" class="relative group text-slate-300 hover:text-white transition-colors">
+            游泳生活 🏊
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-400 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </nav>
+
+        <!-- 移动端汉堡按钮 (md 以下显示) -->
+        <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none z-50 relative p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- 移动端下拉菜单面板（优化版）-->
+      <div id="mobile-menu" class="md:hidden absolute top-full left-0 right-0 bg-slate-950/90 backdrop-blur-xl border-t border-white/10 shadow-2xl transform origin-top scale-y-0 opacity-0 transition-all duration-300 ease-out">
+        <div class="flex flex-col py-4 px-6 space-y-4">
+          <a href="#work" class="mobile-link text-lg font-semibold text-slate-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-xl transition-all">作品</a>
+          <a href="#playground" class="mobile-link text-lg font-semibold text-slate-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-xl transition-all">实验场</a>
+          <a href="#about" class="mobile-link text-lg font-semibold text-slate-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-xl transition-all">关于</a>
+          <a href="/swimming" class="mobile-link text-lg font-semibold text-orange-400 hover:text-orange-300 hover:bg-orange-400/10 px-4 py-3 rounded-xl transition-all">游泳生活 🏊</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="relative z-10 pt-32 pb-24">
+      <slot />
+    </main>
+
+    <footer class="relative z-10 border-t border-white/10 bg-slate-950/50 backdrop-blur-lg py-12">
+      <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+        <p>© {new Date().getFullYear()} Made with ☕ & 💻 by YourName</p>
+        <div class="flex space-x-6 mt-4 md:mt-0 font-['JetBrains_Mono',monospace]">
+          <a href="#" class="hover:text-pink-400 transition-colors">GH</a>
+          <a href="#" class="hover:text-cyan-400 transition-colors">TW</a>
+          <a href="#" class="hover:text-purple-400 transition-colors">LI</a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Outfit', sans-serif; }
+
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+  .animate-blob { animation: blob 10s infinite; }
+  .animation-delay-2000 { animation-delay: 2s; }
+  .animation-delay-4000 { animation-delay: 4s; }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { bg: #020617; }
+  ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #ec4899; }
+  
+  .fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  @keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
 </style>
+
+<!-- 客户端脚本：处理移动端菜单逻辑 -->
+<script client:load>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const path = document.getElementById('menu-path');
+  const links = document.querySelectorAll('.mobile-link');
+  let isOpen = false;
+
+  // 切换菜单状态
+  btn?.addEventListener('click', () => {
+    isOpen = !isOpen;
+    if (isOpen) {
+      // 打开菜单：恢复缩放 + 透明度
+      menu?.classList.remove('scale-y-0', 'opacity-0');
+      menu?.classList.add('scale-y-100', 'opacity-100');
+      // 改变图标为 X
+      path?.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+    } else {
+      // 关闭菜单：缩小 + 隐藏
+      menu?.classList.remove('scale-y-100', 'opacity-100');
+      menu?.classList.add('scale-y-0', 'opacity-0');
+      // 恢复图标为汉堡
+      path?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    }
+  });
+
+  // 点击菜单项后自动关闭
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      if (isOpen) {
+        btn?.click(); // 触发关闭
+      }
+    });
+  });
+
+  // 点击页面其他地方也关闭菜单（可选增强体验）
+  document.addEventListener('click', (e) => {
+    if (isOpen && !btn?.contains(e.target) && !menu?.contains(e.target)) {
+      btn?.click();
+    }
+  });
+</script>
