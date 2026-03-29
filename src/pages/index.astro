@@ -19,7 +19,7 @@ import Layout from '../layouts/Layout.astro';
       </h1>
       
       <p class="text-xl md:text-2xl text-slate-300 max-w-2xl leading-relaxed mb-10 fade-in-up delay-200">
-        开发 | 测试 | 游泳 <br>
+        全栈开发 | 资深测试 | 游泳爱好者 <br>
         我不只构建功能，我创造<strong class="text-white">体验</strong>。
         喜欢把复杂的逻辑变成优雅的交互。
       </p>
@@ -49,7 +49,7 @@ import Layout from '../layouts/Layout.astro';
         {[
           "C#.NET", "JAVA", "Visual Basic", "C/C++", "Oracle", "SQL Server", "PostgreSQL", "MongoDB",
           "LoadRunner","QTP/UFT","Selenium+RF+Appium","JMeter","JUnit",
-          "Postman","Git", "Jenkins‌","JIRE","Bugzilla","WIN CVS"
+          "Postman","Git","Jenkins", "JIRE","Bugzilla","WIN CVS"
 
         ].map((tech, i) => (
           <span 
@@ -73,23 +73,49 @@ import Layout from '../layouts/Layout.astro';
           <div class="relative h-64 overflow-hidden rounded-[22px] bg-slate-900">
              <!-- 模拟截图，实际可换 img -->
              <div class="absolute inset-0 bg-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-110 transition-transform duration-700">
-                <span class="text-6xl">🚀</span>
+                
+              <img src="/images/p1.jpg"/>
+
              </div>
              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
           </div>
           <div class="p-8 relative">
             <div class="absolute -top-10 right-8 p-3 bg-slate-900/80 backdrop-blur-md rounded-2xl border border-white/10 shadow-xl opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-300">
-              <a href="#" class="text-white hover:text-pink-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+              <a href="https://app.chris2den.me/" class="text-white hover:text-pink-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-pink-300 transition-colors">Nebula Dashboard</h3>
-            <p class="text-slate-400 mb-4 line-clamp-2">一个基于 Next.js 的可视化数据平台，支持实时 WebSocket 数据流和 3D 地球展示。</p>
+            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-pink-300 transition-colors">平安好车主APP</h3>
+            <p class="text-slate-400 mb-4 line-clamp-2">平安产险主推APP，主要包括车生活及车险投保。推荐理由：加油有折扣。
+              前世今生：早期为平安科技车主商场项目（Web/H5），围绕车生活，签约全国4s店/维修厂以及礼品发放（积分商城）。
+              因主要会员为车险用户移交给平安产险管理，后经过多次系统重构。
+              我是初创团队测试Leader，第一二次重构的SA/测试Leader/敏捷教练。
+            </p>
             <div class="flex gap-2 text-xs font-mono text-cyan-300">
-              <span>#React</span><span>#ThreeJS</span><span>#DataViz</span>
+              <span>#测试负责人</span><span>#系统分析师</span><span>#敏捷教练</span>
             </div>
           </div>
         </article>
 
         <!-- 项目卡片 2 -->
+        <article class="group relative p-1 rounded-3xl bg-gradient-to-b from-white/10 to-white/5 hover:from-cyan-500/50 hover:to-blue-500/50 transition-all duration-500">
+          <div class="relative h-64 overflow-hidden rounded-[22px] bg-slate-900">
+             <div class="absolute inset-0 bg-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-110 transition-transform duration-700">
+<img src="/images/p2.jpg"/>
+             </div>
+             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+          </div>
+          <div class="p-8 relative">
+             <div class="absolute -top-10 right-8 p-3 bg-slate-900/80 backdrop-blur-md rounded-2xl border border-white/10 shadow-xl opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-300">
+              <a href="https://app.chris2den.me/" class="text-white hover:text-cyan-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">星易选码XY</h3>
+            <p class="text-slate-400 mb-4 line-clamp-2">一个精致酷炫的彩球游戏。我们可以私人定制；如果您有好的想法，期盼合作，共创价值。</p>
+            <div class="flex gap-2 text-xs font-mono text-purple-300">
+              <span>#独立开发者</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 项目卡片 3 -->
         <article class="group relative p-1 rounded-3xl bg-gradient-to-b from-white/10 to-white/5 hover:from-cyan-500/50 hover:to-blue-500/50 transition-all duration-500">
           <div class="relative h-64 overflow-hidden rounded-[22px] bg-slate-900">
              <div class="absolute inset-0 bg-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-110 transition-transform duration-700">
