@@ -54,7 +54,8 @@ import Layout from '../layouts/Layout.astro';
         ].map((tech, i) => (
           <span 
             key={tech}
-            class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-300 font-medium hover:bg-white/10 hover:border-cyan-500/50 hover:text-cyan-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all duration-300 cursor-default select-none"
+            
+            class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300 font-medium hover:bg-white/10 hover:border-cyan-500/50 hover:text-cyan-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all duration-300 cursor-default select-none"
             style={`animation-delay: ${i * 50}ms`}
           >
             {tech}
@@ -68,69 +69,100 @@ import Layout from '../layouts/Layout.astro';
       <h2 class="text-4xl font-bold text-white mb-12 fade-in-up">精选项目</h2>
       <div class="grid md:grid-cols-2 gap-8">
         
-        <!-- 项目卡片 1 -->
+
+
+<!-- 项目卡片 1 -->
+{/* 1. 将外层 div 换成 a 标签，并加上 block 样式 */}
+<a href="https://app.chris2den.me/" target="_blank" rel="noopener" class="group relative p-1 rounded-3xl bg-gradient-to-b from-white/10 to-white/5 hover:from-pink-500/50 hover:to-purple-500/50 transition-all duration-500">
+  <article class="relative h-full"> {/* 内部包裹一层保持结构 */}
+    <div class="relative h-64 overflow-hidden rounded-[22px] bg-slate-900">
+      <div class="absolute inset-0 bg-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-110 transition-transform duration-700">
+        <img src="/images/p1.jpg"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+    </div>
+    <div class="p-8 relative">
+      <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">平安好车主APP</h3>
+      <p class="text-slate-400 mb-4 line-clamp-2">
+        平安产险主推APP，主要包括车生活及车险投保。推荐理由：加油有折扣。
+        前世今生：早期为平安科技车主商场项目（Web/H5），围绕车生活，签约全国4s店/维修厂以及礼品发放（积分商城）。
+        因主要会员为车险用户移交给平安产险管理，后经过多次系统重构。
+        我是初创团队测试Leader，第一二次重构的SA/测试Leader/敏捷教练。
+      </p>
+      <div class="flex gap-2 text-xs font-mono text-cyan-300">
+        <span>#测试Leader</span><span>#系统分析师</span>
+      </div>
+    </div>
+  </article>
+</a>
+
+
+<!-- 项目卡片 2 -->
+{/* 1. 将外层 div 换成 a 标签，并加上 block 样式 */}
+<a href="https://app.chris2den.me/" target="_blank" rel="noopener" class="group relative block p-1 rounded-3xl bg-gradient-to-b from-white/10 to-white/5 hover:from-cyan-500/50 hover:to-blue-500/50 transition-all duration-500">
+  <article class="relative h-full"> {/* 内部包裹一层保持结构 */}
+    <div class="relative h-64 overflow-hidden rounded-[22px] bg-slate-900">
+      <div class="absolute inset-0 bg-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-110 transition-transform duration-700">
+        <img src="/images/p2.jpg"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+    </div>
+    <div class="p-8 relative">
+      <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">星易选码XY</h3>
+      <p class="text-slate-400 mb-4 line-clamp-2">一个精致酷炫的彩球游戏。我们可以私人定制；如果您有好的想法，期盼合作，共创价值。</p>
+      <div class="flex gap-2 text-xs font-mono text-purple-300">
+        <span>#独立开发者</span>
+      </div>
+    </div>
+  </article>
+</a>
+
+<!-- 项目卡片 3 -->
+{/* 1. 将外层 div 换成 a 标签，并加上 block 样式 */}
+<a href="http://epub.cnipa.gov.cn/patent/CN112069068B" target="_blank" rel="noopener" class="group relative block p-1 rounded-3xl bg-gradient-to-b from-white/10 to-white/5 hover:from-cyan-500/50 hover:to-blue-500/50 transition-all duration-500">
+  <article class="relative h-full"> {/* 内部包裹一层保持结构 */}
+    <div class="relative h-64 overflow-hidden rounded-[22px] bg-slate-900">
+      <div class="absolute inset-0 bg-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-110 transition-transform duration-700">
+        <img src="/images/p3.jpg"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+    </div>
+    <div class="p-8 relative">
+      <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">自动化测试发明专利</h3>
+      <p class="text-slate-400 mb-4 line-clamp-2">
+        是自动化框架，更是自动化实施的观察和理解。
+        它与coding同出一源，又有独特属性。合理规划、高效产出和低成本维护是项目成败的关键。  
+      </p>
+      <div class="flex gap-2 text-xs font-mono text-purple-300">
+        <span>#专利发明人</span>
+      </div>
+    </div>
+  </article>
+</a>
+
+
+        <!-- 项目卡片 4 -->
         <article class="group relative p-1 rounded-3xl bg-gradient-to-b from-white/10 to-white/5 hover:from-pink-500/50 hover:to-purple-500/50 transition-all duration-500">
           <div class="relative h-64 overflow-hidden rounded-[22px] bg-slate-900">
              <!-- 模拟截图，实际可换 img -->
              <div class="absolute inset-0 bg-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-110 transition-transform duration-700">
                 
-              <img src="/images/p1.jpg"/>
+              <img src="/images/p4.jpg"/>
 
              </div>
              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
           </div>
           <div class="p-8 relative">
             <div class="absolute -top-10 right-8 p-3 bg-slate-900/80 backdrop-blur-md rounded-2xl border border-white/10 shadow-xl opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-300">
-              <a href="https://app.chris2den.me/" class="text-white hover:text-pink-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+              <a href="#" class="text-white hover:text-pink-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-pink-300 transition-colors">平安好车主APP</h3>
-            <p class="text-slate-400 mb-4 line-clamp-2">平安产险主推APP，主要包括车生活及车险投保。推荐理由：加油有折扣。
-              前世今生：早期为平安科技车主商场项目（Web/H5），围绕车生活，签约全国4s店/维修厂以及礼品发放（积分商城）。
-              因主要会员为车险用户移交给平安产险管理，后经过多次系统重构。
-              我是初创团队测试Leader，第一二次重构的SA/测试Leader/敏捷教练。
+            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-pink-300 transition-colors">质量与效率 Scrum</h3>
+            <p class="text-slate-400 mb-4 line-clamp-2">
+        效率是竞争力核心，质量是核心竞争力基础。遵循敏捷Scrum把产品需求、研发和测试等三大环节，
+        高效有序的融合。追求产品零缺陷，高效价值交付，获得用户认同。  
             </p>
             <div class="flex gap-2 text-xs font-mono text-cyan-300">
-              <span>#测试负责人</span><span>#系统分析师</span><span>#敏捷教练</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 项目卡片 2 -->
-        <article class="group relative p-1 rounded-3xl bg-gradient-to-b from-white/10 to-white/5 hover:from-cyan-500/50 hover:to-blue-500/50 transition-all duration-500">
-          <div class="relative h-64 overflow-hidden rounded-[22px] bg-slate-900">
-             <div class="absolute inset-0 bg-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-110 transition-transform duration-700">
-<img src="/images/p2.jpg"/>
-             </div>
-             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
-          </div>
-          <div class="p-8 relative">
-             <div class="absolute -top-10 right-8 p-3 bg-slate-900/80 backdrop-blur-md rounded-2xl border border-white/10 shadow-xl opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-300">
-              <a href="https://app.chris2den.me/" class="text-white hover:text-cyan-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">星易选码XY</h3>
-            <p class="text-slate-400 mb-4 line-clamp-2">一个精致酷炫的彩球游戏。我们可以私人定制；如果您有好的想法，期盼合作，共创价值。</p>
-            <div class="flex gap-2 text-xs font-mono text-purple-300">
-              <span>#独立开发者</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 项目卡片 3 -->
-        <article class="group relative p-1 rounded-3xl bg-gradient-to-b from-white/10 to-white/5 hover:from-cyan-500/50 hover:to-blue-500/50 transition-all duration-500">
-          <div class="relative h-64 overflow-hidden rounded-[22px] bg-slate-900">
-             <div class="absolute inset-0 bg-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-110 transition-transform duration-700">
-                <span class="text-6xl">🎨</span>
-             </div>
-             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
-          </div>
-          <div class="p-8 relative">
-             <div class="absolute -top-10 right-8 p-3 bg-slate-900/80 backdrop-blur-md rounded-2xl border border-white/10 shadow-xl opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-300">
-              <a href="#" class="text-white hover:text-cyan-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">AI Art Generator</h3>
-            <p class="text-slate-400 mb-4 line-clamp-2">利用 Stable Diffusion API 构建的创意工具，让用户通过文字瞬间生成艺术海报。</p>
-            <div class="flex gap-2 text-xs font-mono text-purple-300">
-              <span>#Python</span><span>#AI</span><span>#Creative</span>
+              <span>#敏捷教练</span><span>#测试专家</span>
             </div>
           </div>
         </article>
@@ -141,22 +173,28 @@ import Layout from '../layouts/Layout.astro';
     <!-- 4. Playground / Ideas: 轻松的个人角落 -->
     <section id="playground" class="relative p-8 md:p-12 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm overflow-hidden">
       <!-- 装饰背景字 -->
-      <div class="absolute -right-10 -top-10 text-[200px] font-bold text-white/5 select-none pointer-events-none rotate-12">PLAY</div>
+      <div class="absolute -right-10 -top-10 text-[200px] font-bold text-white/5 select-none pointer-events-none rotate-12"> Chris </div>
       
       <h2 class="text-3xl font-bold text-white mb-6 relative z-10">🧪 实验与思考</h2>
       <div class="grid md:grid-cols-3 gap-6 relative z-10">
         <div class="p-6 rounded-2xl bg-slate-900/50 border border-white/5 hover:bg-slate-800/50 transition-colors">
-          <div class="text-3xl mb-3">🏊‍♂️</div>
-          <h3 class="font-bold text-white mb-2">流体力学与代码</h3>
-          <p class="text-sm text-slate-400">为什么游泳时的呼吸节奏和异步编程如此相似？一篇关于心流的文章。</p>
+          <div class="text-3xl mb-3">☕</div>
+          <h3 class="font-bold text-white mb-2">Vibe Coding --</h3>
+          <p class="text-sm text-slate-400">
+先说结论：我认为现阶段Vibe Coding过于浪漫，做减法之前并不适合大项目。
+未来AI不是模仿/代替人类编程，而是提供一种全新的编程范式，强调人机协同和代码的可演化性。
+即“面向AI编程”，可概括为1框2可3原则：
+人机可协同框架；可原型推演/可局部进化；编码颗粒化原则/修改局部化原则/代码双语化原则。
+欢迎加入讨论...
+          </p>
         </div>
         <div class="p-6 rounded-2xl bg-slate-900/50 border border-white/5 hover:bg-slate-800/50 transition-colors">
           <div class="text-3xl mb-3">🎵</div>
-          <h3 class="font-bold text-white mb-2">生成式音乐</h3>
+          <h3 class="font-bold text-white mb-2">生成式音乐ing</h3>
           <p class="text-sm text-slate-400">尝试用 Web Audio API 编写一段根据天气变化的背景音乐。</p>
         </div>
         <div class="p-6 rounded-2xl bg-slate-900/50 border border-white/5 hover:bg-slate-800/50 transition-colors">
-          <div class="text-3xl mb-3">☕</div>
+          <div class="text-3xl mb-3">🏊‍♂️</div>
           <h3 class="font-bold text-white mb-2">数字游民生活</h3>
           <p class="text-sm text-slate-400">如何在保持高效开发的同时，享受泳池边的下午时光？</p>
         </div>
@@ -172,7 +210,7 @@ import Layout from '../layouts/Layout.astro';
       <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
         无论是全职机会、自由合作项目，还是只是想聊聊游泳和技术，我都欢迎。
       </p>
-      <a href="mailto:your@email.com" class="inline-block px-10 py-5 bg-white text-slate-950 rounded-full font-bold text-lg hover:scale-110 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-300">
+      <a href="mailto:chris2den@126.com" class="inline-block px-10 py-5 bg-white text-slate-950 rounded-full font-bold text-lg hover:scale-110 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-300">
         发送邮件给我 ✉️
       </a>
     </section>
