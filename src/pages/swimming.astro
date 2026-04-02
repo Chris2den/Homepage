@@ -57,9 +57,10 @@ import '../styles/global.css';
         </a>
 
         <nav class="hidden md:flex space-x-2 bg-white/40 backdrop-blur-md p-1.5 rounded-full shadow-sm border border-white/50">
-          <a href="#philosophy" class="px-4 py-2 rounded-full text-sm font-bold text-slate-700 hover:bg-white hover:text-orange-500 transition-all">游泳哲学</a>
-          <a href="#gallery" class="px-4 py-2 rounded-full text-sm font-bold text-slate-700 hover:bg-white hover:text-orange-500 transition-all">精彩瞬间</a>
-          <a href="#gear" class="px-4 py-2 rounded-full text-sm font-bold text-slate-700 hover:bg-white hover:text-orange-500 transition-all">装备库</a>
+
+          <a href="#games" class="px-4 py-2 rounded-full text-sm font-bold text-slate-700 hover:bg-white hover:text-orange-500 transition-all">精彩瞬间</a>
+          <a href="#lecture" class="px-4 py-2 rounded-full text-sm font-bold text-slate-700 hover:bg-white hover:text-orange-500 transition-all">公益讲座</a>
+          <a href="#news" class="px-4 py-2 rounded-full text-sm font-bold text-slate-700 hover:bg-white hover:text-orange-500 transition-all">最新动态</a>
         </nav>
         
         <div class="md:hidden text-2xl">🏊‍♂️</div>
@@ -86,11 +87,11 @@ import '../styles/global.css';
           </p>
 
           <div class="flex justify-center gap-4 pt-4">
-            <a href="#gallery" class="px-8 py-4 bg-blue-600 text-white rounded-full font-bold shadow-xl shadow-blue-600/30 hover:bg-blue-500 hover:scale-105 hover:-translate-y-1 transition-all duration-300">
+            <a href="#games" class="px-8 py-4 bg-blue-600 text-white rounded-full font-bold shadow-xl shadow-blue-600/30 hover:bg-blue-500 hover:scale-105 hover:-translate-y-1 transition-all duration-300">
               看看我的训练 📸
             </a>
-            <a href="https://strava.com" target="_blank" class="px-8 py-4 bg-white text-orange-500 border-2 border-orange-100 rounded-full font-bold hover:border-orange-500 hover:shadow-lg transition-all duration-300">
-              查看 Strava 数据 📊
+            <a href="#lecture" class="px-8 py-4 bg-white text-orange-500 border-2 border-orange-100 rounded-full font-bold hover:border-orange-500 hover:shadow-lg transition-all duration-300">
+              我的公益讲座 🎙️
             </a>
           </div>
         </section>
@@ -98,9 +99,9 @@ import '../styles/global.css';
         <!-- 2. Philosophy: 卡片式布局，圆角更大 -->
         <section id="philosophy" class="grid md:grid-cols-3 gap-6">
           {[
-            { icon: "🧘", title: "心流状态", desc: "水下没有消息通知，只有呼吸和划水。这是我最专注的时刻。" },
-            { icon: "💪", title: "自律即自由", desc: "无论冬夏，清晨 6 点的泳池见证了我的坚持。游泳教会我延迟满足。" },
-            { icon: "🌊", title: "像水一样", desc: "遇到困难像水流绕过岩石。游泳不仅是运动，更是生活哲学。" }
+            { icon: "🌊", title: "如何克服怕水", desc: "有经验的游泳教练可能是最优解。循序渐进原则和练习必要的基础技能：水中呼吸，水中站立和漂浮适应.." },
+            { icon: "🧘", title: "哪个泳姿最适合初学者", desc: "通常蛙泳适合初学者，因为它相对容易掌握。更关键的是蛙泳是俯卧式，这是对初学者感觉最安全的之势.." },
+            { icon: "💪", title: "公开水域要注意什么", desc: "公开水域与泳池有很大区别。首先，需要克服心理恐惧,水下通常伸手不见五指。其实，安全原则。领队必熟悉水域；带好救生设备；量力而行；不推荐独狼.." }
           ].map((item) => (
             <div class="group p-8 bg-white/60 backdrop-blur-sm rounded-3xl border border-white/60 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-2 transition-all duration-300">
               <div class="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
@@ -111,10 +112,12 @@ import '../styles/global.css';
         </section>
 
         <!-- 3. Gallery: 瀑布流风格 (模拟) -->
-        <section id="gallery">
+        <section id="games">
           <div class="flex items-center justify-between mb-8">
             <h2 class="text-3xl font-black text-slate-800">📸 比赛瞬间</h2>
-            <span class="text-sm font-bold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">精彩赛季</span>
+            <span class="text-sm font-bold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">公开水域</span>
+            <span class="text-sm font-bold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">竞技游泳</span>
+            
           </div>
           
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
@@ -145,9 +148,9 @@ import '../styles/global.css';
 
 
         <!-- 3. Gallery: 瀑布流风格 (模拟) -->
-        <section id="gallery">
+        <section id="lecture">
           <div class="flex items-center justify-between mb-8">
-            <h2 class="text-3xl font-black text-slate-800">📸 公益讲座</h2>
+            <h2 class="text-3xl font-black text-slate-800">🎙️ 公益讲座</h2>
             <span class="text-sm font-bold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">深圳</span>
             <span class="text-sm font-bold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">广州</span>
             <span class="text-sm font-bold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">从化</span>
@@ -184,38 +187,40 @@ import '../styles/global.css';
 
         
         <!-- 4. Gear: 活泼的列表 -->
-        <section id="gear" class="bg-white/80 backdrop-blur-md rounded-[3rem] p-8 md:p-12 shadow-sm border border-white/60">
-          <h2 class="text-3xl font-black text-slate-800 mb-8 text-center">🎒 我的装备库</h2>
+        <section id="news" class="bg-white/80 backdrop-blur-md rounded-[3rem] p-8 md:p-12 shadow-sm border border-white/60">
+          <h2 class="text-3xl font-black text-slate-800 mb-8 text-center">⌚ 最新动态</h2>
           <div class="grid md:grid-cols-2 gap-8">
             <div class="space-y-4">
               <div class="flex items-center gap-4 p-4 rounded-2xl bg-blue-50 hover:bg-blue-100 transition-colors">
-                <div class="text-3xl">👓</div>
+                <div class="text-3xl">🦞</div>
                 <div>
-                  <h4 class="font-bold text-slate-800">Arena Cobra Ultra</h4>
-                  <p class="text-sm text-slate-500">竞赛级泳镜，视野超清晰</p>
+                  <h4 class="font-bold text-slate-800">游泳扫盲班五期ing</h4>
+                  <p class="text-sm text-slate-500">
+                    “我希望每一位在水中的人都会游泳”。游泳扫盲公益教学活动第五期正在筹备中，欢迎关注！
+                  </p>
                 </div>
               </div>
               <div class="flex items-center gap-4 p-4 rounded-2xl bg-orange-50 hover:bg-orange-100 transition-colors">
-                <div class="text-3xl">🧢</div>
+                <div class="text-3xl">🐋</div>
                 <div>
-                  <h4 class="font-bold text-slate-800">硅胶竞速泳帽</h4>
-                  <p class="text-sm text-slate-500">减少阻力，保护头发</p>
+                  <h4 class="font-bold text-slate-800">游泳扫盲班四期</h4>
+                  <p class="text-sm text-slate-500">报名已关闭</p>
                 </div>
               </div>
             </div>
             <div class="space-y-4">
               <div class="flex items-center gap-4 p-4 rounded-2xl bg-cyan-50 hover:bg-cyan-100 transition-colors">
-                <div class="text-3xl">⌚</div>
+                <div class="text-3xl">🐠</div>
                 <div>
-                  <h4 class="font-bold text-slate-800">Garmin Swim 2</h4>
-                  <p class="text-sm text-slate-500">精准记录 SWOLF 和配速</p>
+                  <h4 class="font-bold text-slate-800">游泳扫盲班三期</h4>
+                  <p class="text-sm text-slate-500">报名已关闭</p>
                 </div>
               </div>
               <div class="flex items-center gap-4 p-4 rounded-2xl bg-purple-50 hover:bg-purple-100 transition-colors">
-                <div class="text-3xl">🦵</div>
+                <div class="text-3xl">🐬</div>
                 <div>
-                  <h4 class="font-bold text-slate-800">短脚蹼</h4>
-                  <p class="text-sm text-slate-500">打腿训练神器</p>
+                  <h4 class="font-bold text-slate-800">游泳扫盲班二期</h4>
+                  <p class="text-sm text-slate-500">活动已关闭</p>
                 </div>
               </div>
             </div>
@@ -226,12 +231,12 @@ import '../styles/global.css';
         <section class="text-center py-12">
           <h2 class="text-4xl font-black text-slate-800 mb-6">想一起下水吗？</h2>
           <p class="text-lg text-slate-600 mb-8">无论是约泳还是交流训练心得，都欢迎联系我！</p>
-          <a href="mailto:your@email.com" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-400 to-pink-500 text-white rounded-full font-bold shadow-lg shadow-orange-400/40 hover:shadow-orange-400/60 hover:scale-105 transition-all duration-300">
+          <a href="mailto:chris2den@126.com" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-400 to-pink-500 text-white rounded-full font-bold shadow-lg shadow-orange-400/40 hover:shadow-orange-400/60 hover:scale-105 transition-all duration-300">
             发送邮件 📩
           </a>
           
           <div class="mt-16 pt-8 border-t border-slate-200/60 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
-            <p>© 2026 YourName's Swimming Log. Stay Wet! 💦</p>
+            <p>© 2026 Chris's Swimming Log. Stay Wet! 💦</p>
             <a href="/" class="mt-4 md:mt-0 font-bold text-blue-600 hover:underline">&larr; 回到开发世界</a>
           </div>
         </section>
